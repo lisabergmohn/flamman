@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flamman</title>
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    @import url("https://use.typekit.net/wwf0mkn.css");
+  </style>
+
+  <script src="/js/navbar.js" type="module"></script><!-- js for navbar-->
+
+</head>
+
+<body>
+
+  <div class="grid-container"><!-- grid container -->
+    <header><!-- header -->
+      <h1><a href="../index.html">Flamman</a></h1>
+    </header>
+
+    <nav><!-- grid responsive nav bar -->
+      <img class="nav-img" src="/images/logo.svg" alt="flamman logo" loading="lazy">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu"><!-- responsive nav bar -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <main class="main-contact"><!-- main contact -->
+      <form class="contact-form" action="#"><!-- contct form -->
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" style="height:100px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </main>
+
+    <aside class="aside-contact"><!-- img -->
+      <img src="/images/walking.webp" alt="two hikers in a forest" loading="lazy">
+    </aside>
+
+    <section class="newsletter"><!-- section newsletter-->
+      <form class="newsletter-left" action="#"><!-- form newsletter left -->
+        <h3>Newsletter</h3>
+        <p>
+          Subscribe to Flamman´s weekly newsletter
+          and receive updates on our latest trails,
+          delightful meals and new adventures.
+        </p>
+
+        <input type="text" name="Name" id="newsletter-name" placeholder="Name*" required><br>
+        <input type="text" name="mail" id="newsletter-mail" placeholder="Email*" required><br>
+
+        <input type="submit" value="Subscribe">
+      </form>
+      <div class="newsletter-right"><!-- form newsletter right-->
+        <img id="newsletter-img" src="/images/newsletter.svg" alt="Illustration of a person hiking" loading="lazy">
+      </div>
+    </section>
+
+    <footer><!-- footer -->
+      <img src="/images/logo.svg" alt="flamman logo" loading="lazy">
+      <h4>Flamman</h4>
+      <ul>  
+        <li>Strandstigen 4</li>
+        <li>412 33 Göteborg</li>
+        <li>031 - 12 23 98</li>
+        <li><a href="mailto:lisa.bergmohn@gmail.com">info@flamman.se</a></li>
+      </ul>    
+    </footer><!-- end footer -->
+    
+  </div><!-- grid container ends -->
+
+
+
+</body>
+
+</html>

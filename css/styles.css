@@ -1,0 +1,842 @@
+html {
+    font-size: 100%;
+    /* from website root 16px */
+    color: #2E231B;
+    /* font color */
+}
+
+body {
+    background-color: #f7f5ec;
+}
+
+/* style basic grid-container */
+.grid-container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1500px;
+    height: auto;
+    display: grid;
+    gap: 1.5vw;
+    padding: 1vw;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        'header header'
+        'nav nav'
+        'main aside'
+        'section section'
+        'footer footer';
+
+}
+
+
+header,
+nav,
+main,
+aside:not(.aside-hero, .aside-contactimg),
+section,
+footer {
+    /* gradient background color*/
+    background: #D0D9D4;
+    background: linear-gradient(315deg, #D0D9D4, #A3B1A9);
+    border-radius: 0.625rem;
+    border: 1px solid #cbd4cf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* fonts */
+h1 a {
+    font-family: farmhand, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8rem;
+    letter-spacing: .8rem;
+    text-decoration: none;
+    color: #2E231B;
+}
+
+h2,
+h3 {
+    font-family: farmhand, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+}
+
+h4 {
+    font-family: farmhand, serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    margin-bottom: 6px;
+}
+
+/* dinner label */
+h5 {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #2E231B;
+    /* font color */
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+}
+
+p {
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 140%;
+    color: #2E231B;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+
+/* responsive grid and heading small devices (phones) */
+@media (max-width: 425px) {
+    .grid-container {
+        width: 100%;
+        gap: 1.5vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header header'
+            'nav nav'
+            'main main'
+            'aside aside'
+            'section section'
+            'footer footer';
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        letter-spacing: .1rem;
+    }
+
+}
+
+/* responsive grid  medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    .grid-container {
+        width: 100%;
+        gap: 1.5vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header header'
+            'nav nav'
+            'main main'
+            'aside aside'
+            'section section'
+            'footer footer';
+    }
+}
+
+/* responsive large devices (laptops/desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .grid-container {
+        width: 90%;
+        gap: 1.5vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header header'
+            'nav nav'
+            'main main'
+            'aside aside'
+            'section section'
+            'footer footer';
+    }
+}
+
+/* header */
+header {
+    grid-area: header;
+    text-align: center;
+    padding: 60px;
+}
+
+/* responsive header small devices (phones) */
+@media (max-width: 425px) {
+    header {
+        padding: 20px;
+    }
+
+    h1 a {
+        font-size: 4rem;
+        letter-spacing: .2rem;
+    }
+}
+
+/* responsive header medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    header {
+        padding: 40px;
+    }
+
+    h1 a {
+        font-size: 4rem;
+        letter-spacing: .5rem;
+    }
+
+}
+
+/* styling navbar*/
+nav {
+    grid-area: nav;
+    /* grid */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+
+nav .nav-links li {
+    margin: 5px 15px;
+}
+
+nav .nav-links a {
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #2E231B;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+nav .nav-links a:hover {
+    color: #F24F13;
+    font-weight: 500;
+}
+
+nav .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+nav .menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #0D0D0D;
+    margin: 4px 0;
+}
+
+nav .nav-img {
+    width: 140px;
+}
+
+/* responsive navbar small devices (phones) */
+@media (max-width: 425px) {
+    nav {
+        height: auto;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav .nav-links a {
+        font-size: 1rem;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    nav .menu-toggle {
+        display: flex;
+    }
+
+    nav .nav-img {
+        width: 100px;
+    }
+
+    nav .nav-img.active {
+        display: none;
+    }
+}
+
+/* responsive navbar medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    nav {
+        height: auto;
+        padding: 10px 40px;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    nav .menu-toggle {
+        display: flex;
+    }
+
+    nav .nav-img {
+        width: 100px;
+    }
+
+    nav .nav-img.active {
+        display: none;
+    }
+
+}
+
+/* responsive navbar large devices (laptops/desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    nav {
+        height: auto;
+        padding: 10px 40px;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    nav .menu-toggle {
+        display: flex;
+    }
+
+    nav .nav-img {
+        width: 100px;
+    }
+
+    nav .nav-img.active {
+        display: none;
+    }
+}
+
+
+/* main */
+main {
+    grid-area: main;
+}
+
+/* main-hero index.html */
+.main-hero {
+    padding: 70px;
+
+}
+
+/* responsive main small devices (phones) */
+@media (max-width: 425px) {
+    .main-hero {
+        padding: 40px;
+    }
+}
+
+/* main-recipe bookings.html */
+.main-recipe {
+    padding: 40px;
+}
+
+/* styling table for roulette meat */
+#table-data td {
+    width: auto;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #f7f5ec;
+    border: 1px solid #2E231B;
+    line-break: auto;
+    line-height: normal;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+#table-data td a {
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #2E231B;
+    /* font color */
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#table-data td a:hover {
+    color: #F24F13;
+}
+
+/* hemska bilder */
+/*#table-data td img {
+    width: 85px;
+}*/
+
+/* aside-campfire bookings.html */
+.aside-fire {
+    padding: 40px;
+}
+
+/* map size */
+#map {
+    height: 300px;
+}
+
+/* style booking and contact form */
+input[type=text],
+input[type=date],
+select,
+textarea {
+    background-color: #f7f5ec;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2E231B;
+    /* same as font color */
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 4px;
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #2E231B;
+    /* font color */
+    letter-spacing: .05rem;
+    text-decoration: none;
+}
+
+.search {
+    display: grid;
+    justify-items: start;
+}
+
+#search-field {
+    width: 200px;
+}
+
+/* hide search form after click*/
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.bookings {
+    padding: 70px;
+}
+
+.outdoors {
+    padding: 70px;
+
+}
+
+/* responsive outdoors small devices (phones) */
+@media (max-width: 425px) {
+    .bookings {
+        padding: 40px;
+    }
+}
+
+/* responsive bookings medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    .bookings {
+        padding: 60px;
+    }
+}
+
+/* styling for all labels */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #2E231B;
+    /* font color */
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+}
+
+
+
+/* buttons */
+input[type=submit],
+#bookBtn,
+.button-link {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5rem;
+    border: none;
+    /*
+    * Created with https://www.css-gradient.com
+    * Gradient link: https://www.css-gradient.com/?c1=042613&c2=044025&gt=l&gd=dtl
+    */
+    background: #042613;
+    background: linear-gradient(135deg, #042613, #044025);
+    color: #f7f5ec;
+    padding: 12px 24px;
+    text-align: center;
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: .8rem;
+    line-height: 100%;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+/* responsive button small devices (phones) */
+@media (max-width: 425px) {
+    /* buttons */
+input[type=submit],
+a#bookBtn,
+.button-link {
+    margin-top: 15px;
+    }
+}
+
+/* responsive button medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* buttons */
+    input[type=submit],
+    a#bookBtn,
+    .button-link {
+        margin-top: 15px;
+    }
+}
+
+article {
+    margin-bottom: 40px;
+}
+
+input[type=submit]:hover,
+button:hover {
+    background: #F24F13;
+}
+
+#search-field input[type=text] {
+    width: 50%;
+}
+
+
+/* styling the form for dinner booking */
+.table-dinner {
+    width: 100%;
+    height: 41.5px;
+    background-color: #f7f5ec;
+    padding: 12px;
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 4px;
+    border: 1px solid #2E231B;
+    position: relative;
+    border-collapse: unset;
+    cursor: pointer;
+}
+
+/* hover text over table-dinner from */
+.table-dinner::before {
+    content: 'Hey, you have already scored a recipe! Go on and pick a fireplace.';
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    background-color: #e9f0ec;
+    height: 50px;
+    width: 200px;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: normal;
+}
+
+.table-dinner:hover::before {
+    opacity: 1;
+}
+
+#table-meat td a {
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #2E231B;
+    /* font color */
+    letter-spacing: .05rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* aside */
+aside {
+    grid-area: aside;
+}
+
+/* aside-hero index.html */
+.aside-hero img {
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    border: 1px solid #cbd4cf;
+    object-fit: cover;
+}
+
+/* main-contact contact.html */
+.main-contact {
+    padding: 40px;
+}
+
+/* contact-form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* contact.html */
+.aside-contact img {
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    border: 1px solid #cbd4cf;
+    object-fit: cover;
+}
+
+/* responsive contact small devices (phones) */
+@media (max-width: 425px) {
+    .main-contact {
+        padding: 20px;
+    }
+
+    article {
+        margin-bottom: 20px;
+    }
+
+}
+
+/* responsive contact medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    .main-contact {
+        padding: 20px;
+    }
+}
+
+
+
+/* responsive outdoors small devices (phones) */
+@media (max-width: 425px) {
+    .outdoors {
+        padding: 40px;
+    }
+}
+
+/* newsletter in two columns */
+.newsletter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    grid-template-columns: 70% 30%;
+    /* size for each columns */
+}
+
+/* col left */
+.newsletter-left {
+    padding: 20px;
+}
+
+.newsletter-left p {
+    width: 500px;
+}
+
+/* col right newsletter round img */
+#newsletter-img {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+
+}
+
+/* newsletter name/email inputfield */
+#newsletter-name,
+#newsletter-mail {
+    width: 600px;
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+
+}
+
+/* responsive newsletter small devices (phones) */
+@media (max-width: 425px) {
+    .newsletter {
+        padding: 20px;
+        display: flex;
+        grid-template-columns: 100%;
+        /* size for each columns */
+    }
+
+    .newsletter-left p {
+        width: 200px;
+    }
+
+    #newsletter-img {
+        display: none;
+    }
+
+    /* newsletter name/email inputfield */
+    #newsletter-name,
+    #newsletter-mail {
+        width: 260px;
+    }
+}
+
+/* responsive newsletter medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    .newsletter {
+        align-items: center;
+        justify-items: center;
+    }
+
+    .newsletter-left p {
+        width: 200px;
+    }
+
+    #newsletter-img {
+        width: 100px;
+    }
+
+    /* newsletter name/email inputfield */
+    #newsletter-name,
+    #newsletter-mail {
+        width: 300px;
+    }
+
+}
+
+/* responsive large devices (laptops/desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .newsletter {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        grid-template-columns: 70% 30%;
+        /* size for each columns */
+    }
+
+    .newsletter-left p {
+        width: 200px;
+    }
+
+    #newsletter-img {
+        width: 150px;
+    }
+
+    /* newsletter name/email inputfield */
+    #newsletter-name,
+    #newsletter-mail {
+        width: 400px;
+    }
+}
+
+section {
+    grid-area: section;
+    padding: 40px;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+footer img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+footer h4 {
+    font-family: farmhand, serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    margin-bottom: 6px;
+}
+
+footer li {
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: .8rem;
+    line-height: 120%;
+    color: #2E231B;
+    margin-bottom: 5px;
+
+}
+
+/* responsive footer small devices (phones) */
+@media (max-width: 425px) {
+    footer {
+        padding: 20px;
+    }
+
+    footer h4 {
+        font-size: 1rem;
+    }
+
+    footer li {
+        font-size: .6rem;
+    }
+}
