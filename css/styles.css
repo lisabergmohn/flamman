@@ -548,7 +548,7 @@ article {
 }
 
 input[type=submit]:hover,
-button:hover {
+button:hover, .button-link:hover {
     background: #F24F13;
 }
 
