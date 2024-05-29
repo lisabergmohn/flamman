@@ -64,7 +64,7 @@ function writeOutMeals(foodData) {
 
     //dinner presnted in form
     formRecipe.innerHTML = `    
-                            <td><a href="${foodData.strLink}" target='_blank'>Your adventure menu will be ${foodData.strMeal}</a></td>
+                            <td>Your adventure menu will be ${foodData.strMeal}</td>
 
                             `;
 

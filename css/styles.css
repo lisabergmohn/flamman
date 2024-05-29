@@ -402,6 +402,17 @@ main {
     width: 85px;
 }*/
 
+.table-dinner td{
+    font-family: trade-gothic-next, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #2E231B;
+    line-height: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* aside-campfire bookings.html */
 .aside-fire {
     padding: 40px;
@@ -496,7 +507,7 @@ label {
 
 
 /* buttons */
-input[type=submit],
+input[type=submit], input[type=date]
 #bookBtn,
 .button-link {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -572,6 +583,7 @@ button:hover, .button-link:hover {
     cursor: pointer;
 }
 
+
 /* hover text over table-dinner from */
 .table-dinner::before {
     content: 'Hey, you have already scored a recipe! Go on and pick a fireplace.';
@@ -607,6 +619,22 @@ button:hover, .button-link:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* responsive table for booking event small devices (phones) */
+@media (max-width: 425px) {
+    .table-dinner {
+        height: 41.5px;
+    }
+}
+
+/* responsive medium devices (tablets) */
+@media (min-width: 426px) and (max-width: 768px) {
+    .table-dinner {
+        height: 41.5px;
+    }
+}
+
+
 
 /* aside */
 aside {
@@ -751,7 +779,7 @@ aside {
     }
 
     #newsletter-img {
-        width: 100px;
+        display: none;
     }
 
     /* newsletter name/email inputfield */
