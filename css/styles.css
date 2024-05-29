@@ -763,7 +763,7 @@ aside {
 }
 
 /* responsive large devices (laptops/desktops) */
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1200px) {
     .newsletter {
         display: flex;
         align-items: flex-start;
@@ -777,7 +777,7 @@ aside {
     }
 
     #newsletter-img {
-        width: 150px;
+        width: 180px;
     }
 
     /* newsletter name/email inputfield */
@@ -809,7 +809,7 @@ footer img {
 footer h4 {
     font-family: farmhand, serif;
     font-style: normal;
-    font-weight: 900;
+    font-weight: 300;
     font-size: 1.5rem;
     letter-spacing: .1rem;
     margin-bottom: 6px;
