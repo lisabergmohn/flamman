@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //check each search: more than 1 in length OR includes the 
         //fooddata from recipes.
         //with error handling
-        if (searchValue.length > 1 || searchValue.includes(dataRec.textContent)) {
+        if (searchValue.length > 1 || searchValue.includes(dataRec)) {
             fetchApi(searchValue).catch(function (error) {
                 console.error('Error fetching data: ', error);
                 alert('Error when playing dinner roulett.');

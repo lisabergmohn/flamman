@@ -30,6 +30,7 @@ function getValue(result) {
 
 
     const mealValues = result.meals;
+    console.log(mealValues);
 
     //get a random recipe
     const randomIndex = Math.floor(Math.random() * mealValues.length);
@@ -39,7 +40,7 @@ function getValue(result) {
     const foodData = {
         strMeal: randomMeal.strMeal, /* key value recipes */
         strLink: randomMeal.strSource,/* key value links */
-        mealImg: `https://www.themealdb.com/images/ingredients/${randomMeal.strCategory}-Small.png`, /* key value img */
+        //mealImg: `https://www.themealdb.com/images/ingredients/${randomMeal.strCategory}-Small.png`, /* key value img hemska bilder */
 
     };
 

@@ -402,6 +402,10 @@ main {
     width: 85px;
 }*/
 
+.table-dinner {
+    border-collapse: separate;
+}
+
 .table-dinner td {
     font-family: trade-gothic-next, sans-serif;
     font-style: normal;
