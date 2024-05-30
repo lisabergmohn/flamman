@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flamman</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- leaflet library-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/validateform.js" type="module"></script>
+  <script src="../js/main.js" type="module"></script>
+  <script src="../js/navbar.js" type="module"></script><!-- js for navbar-->
+  <!--script src="/js/fires.js" type="module"></script-->
+  <style>
+    @import url("https://use.typekit.net/wwf0mkn.css");
+  </style>
+</head>
+<body>
+  <div class="grid-container"><!-- grid container -->
+    <header><!-- header -->
+      <h1><a href="../index.html">Flamman</a></h1>
+    </header>
+    <nav><!-- grid responsive nav bar -->
+      <img class="nav-img" src="../images/logo.svg" alt="flamman logo" loading="lazy">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="outdoors.html">Outdoors</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu"><!-- responsive nav bar -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+    <main class="main-recipe"><!-- widget recipe -->
+      <h2>Surprise Grill Experience</h2>
+      <p>
+        Feeling adventurous? Pick a random meat like chicken, beef, or pork,
+        and discover a new recipe to grill amidst the stunning landscapes of Göteborg.
+        Let the thrill of the unknown spice up your culinary journey
+        as you explore the beauty of Swedish nature!
+      </p>
+      <form class="search">
+        <label for="search-field">dinner roulette</label><br>
+        <input type="text" id="search-field" name="search-field"><br>
+        <input type="submit" value="Submit" id="submit-recipes" aria-label="submit dinner roulette"><br>
+      </form>
+
+      <table class="table-recipes"><!-- table presenting meal result-->
+        <tr id="table-data">
+        </tr>
+      </table>
+    </main>
+    <aside class="aside-fire"><!-- widget fire -->
+      <h2>Choose Your Adventure</h2>
+      <p>Begin by selecting a spot on the map for an outdoor fireplace experience in Göteborg.
+        After choosing your ideal location, don't forget to complete the booking form to secure your spot
+        and ensure a memorable outdoor experience!</p>
+      <p id="latitude"></p>
+      <p id="longitude"></p>
+      <div id="map"></div><!-- map -->
+    </aside>
+    <section class="bookings"><!-- section bookings -->
+      <h2>Book your adventure</h2>
+      <p>To complete your booking, please fill out the form below and click "Confirm Booking.</p>
+      <form id="bookingForm" action="https://formspree.io/f/mrgnvlzp" method="post"><!-- sending form to formspree -->
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="phone">Phone</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <h5>dinner</h5><br>
+        <table class="table-dinner"><!-- table presenting meal result-->
+          <tr id="table-meat">
+          </tr>
+        </table><br>
+        <label for="fire">pick a Fireplace</label><br>
+        <select id="fire" name="fire">
+          <option value="Rastplats-Vastra-Langvattnet">Västra Långvattnet</option>
+          <option value="Lilla-Delsjon-raststuga">Lilla Delsjön</option>
+          <option value="Kindboviksvagen">Kindboviksvägen</option>
+          <option value="lagre-kasjon-vindskydd">Lägre Kåsjön</option>
+          <option value="gott-lage-getryggen-vindskydd">Gött läge Getryggen</option>
+          <option value="Rastplats-Kasjon-runt">Rastplats Kasjön runt</option>
+          <option value="Delsjoomradet-2">Delsjöområdet</option>
+          <option value="Harlanda-tjarn">Härlanda Tjärn</option>
+          <option value="Lackarebacks-Langvattens-ostra-grillplats">Lackarebäcks Långvatten</option>
+          <option value="Delsjoomradet-6">Delsjöområdet</option>
+          <option value="Radasjons-naturreservat">Rådasjöns naturreservat</option>
+          <option value="Sagoparken-Sateriet-Molnlycke">Sagoparken Säteriet</option>
+          <option value="Anggardsbergen">Änggårdsberget</option>
+          <option value="Gunnebo-Stensjons-grillplats">Gunnebo Stensjön</option>
+          <option value="Herkules-Dammens-grillplats">Herkules Dammen</option>
+        </select><br>
+        <label for="calender">Date of adventure</label><br>
+        <input type="date" id="calender" name="calender" required><br>
+        <label for="subject">message to flamman</label><br>
+        <textarea id="subject" name="subject" style="height:100px"></textarea><br>
+
+        <input type="submit" value="confirm booking" aria-label="confirm booking"><br>
+
+      </form>
+    </section><!-- booking form ends -->
+
+    <footer><!-- footer -->
+      <img src="../images/logo.svg" alt="flamman logo" loading="lazy">
+      <h4>Flamman</h4>
+      <ul>  
+      <ul>
+        <li>Strandstigen 4</li>
+        <li>412 33 Göteborg</li>
+        <li>031 - 12 23 98</li>
+        <li><a href="mailto:lisa.bergmohn@gmail.com">info@flamman.se</a></li>
+      </ul>   
+      </ul>
+    </footer><!-- end footer -->
+
+  </div><!-- grid container ends -->
+</body>
+</html>

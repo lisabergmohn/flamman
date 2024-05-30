@@ -408,9 +408,10 @@ main {
     font-weight: 300;
     font-size: 1rem;
     color: #2E231B;
-    line-height: normal;
+    line-height: normal;    
     text-decoration: none;
     cursor: pointer;
+    padding: 12px;
 }
 
 /* aside-campfire bookings.html */
@@ -573,22 +574,6 @@ button:hover,
 #search-field input[type=text] {
     width: 50%;
 }
-
-
-/* styling the form for dinner booking */
-.table-dinner {
-    width: 100%;
-    background-color: e7f0fe;
-    padding: 12px;
-    box-sizing: border-box;
-    resize: vertical;
-    border-radius: 4px;
-    border: 1px solid #2E231B;
-    position: relative;
-    border-collapse: unset;
-    cursor: pointer;
-}
-
 
 /* hover text over table-dinner from */
 .table-dinner::before {
