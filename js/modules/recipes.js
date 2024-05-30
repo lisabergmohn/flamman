@@ -3,18 +3,20 @@
 export async function fetchApi(searchValue) {
     const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`;
 
-    const response = await fetch(apiUrl);
     try {
+        const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('Network response not OK');
         }
 
         const result = await response.json();
-        console.log(result);
+
         getValue(result);
+        return result;
 
     } catch (error) {
         console.error('Error fetching data: ', error);
+        alert('Error getting recipes');
     }
 
 }
@@ -50,6 +52,7 @@ let dataRecipes;
 let formRecipe;
 
 function writeOutMeals(foodData) {
+    const dinnerTable = document.querySelector('.table-dinner');
 
     dataRecipes = document.createElement('td');
     //dinner presented in dinner roulette
@@ -67,6 +70,10 @@ function writeOutMeals(foodData) {
                             <td>Your adventure menu will be ${foodData.strMeal}</td>
 
                             `;
+
+
+    dinnerTable.style.background = '#e7f0fe';
+
 
     //OBS! jag plockade bort bilden från varje söksvar för de såg ganska äckliga ut... 
     //nedan hur den såg ut initialt

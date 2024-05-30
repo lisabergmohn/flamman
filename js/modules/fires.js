@@ -8,7 +8,7 @@ export async function fetchFire() {
     try {
         const response = await fetch(proxyUrl + fireUrl);
         if (!response.ok) {
-            throw new error('Network response was not OK');
+            throw new Error('Network response was not OK');
         }
 
         const data = await response.json();
@@ -28,7 +28,7 @@ function getFire(startUrl) {
     console.log(startUrl);
     const anchor = document.createElement('a');
 
-    anchor.href += startUrl + '/Grillplats/Visa/';
+    anchor.href = startUrl + '/Grillplats/Visa/';
     console.log(anchor);
 
     getMap(anchor);

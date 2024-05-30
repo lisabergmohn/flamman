@@ -21,7 +21,7 @@ export function popUpspots(map, anchor) {
 
     /* Gött läge Getryggen Vindskydd */
     let getryggen = L.marker([57.705642, 12.068675]).addTo(map);
-    getryggen.bindPopup("<b><a href='" + anchor.href + "Gott-lage-Getryggen-Vindskydd' target='_blank'>Gött läge Getryggen Vindskydd</b>").openPopup();
+    getryggen.bindPopup("<b><a href='" + anchor.href + "Gott-lage-Getryggen-Vindskydd' target='_blank'>Gött läge Getryggen Vindskydd</a></b>").openPopup();
 
     /* Rastplats Kåsjön runt */
     let rastplatkasjon = L.marker([57.703630, 12.106239]).addTo(map);

@@ -3,46 +3,54 @@ import { fetchFire } from './modules/fires.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    //eventlistener searching for random recipe
+
     const btn = document.getElementById('submit-recipes');
+    const searchForm = document.querySelector('.search');
+    const searchField = document.getElementById('search-field');
     const dataRec = document.getElementById('td');
 
+    //eventlistener searching for random recipe
     btn.addEventListener('click', function (event) {
         event.preventDefault();
 
-        const searchValue = document.getElementById('search-field').value.trim();
-        const searchForm = document.querySelector('.search');
-        
+        const searchValue = searchField.value.trim();
+
         //to remove the searchform from when there is a result
         searchForm.classList.remove('visible');
-        
-        //check each search: more than 1 in length OR includes the 
-        //fooddata from recipes
-        if (searchValue.length > 1 || searchValue.includes(dataRec)) {
-            fetchApi(searchValue);
-        } else {
-            console.log(!searchValue);
-            alert('First, let the dinner roulette pick your food!');
-            searchForm.classList.add('visible'); 
-        }
 
+        //check each search: more than 1 in length OR includes the 
+        //fooddata from recipes.
+        //with error handling
+        if (searchValue.length > 1 || searchValue.includes(dataRec.textContent)) {
+            fetchApi(searchValue).catch(function (error) {
+                console.error('Error fetching data: ', error);
+                alert('Error when playing dinner roulett.');
+            });
+
+        } else {
+            alert('First, let the dinner roulette pick your food!');
+            searchForm.classList.add('visible');
+        }
 
         //clear search field
         document.getElementById('search-field').value = '';
-        
-               //hide form after dinner roulette
-               function hideForm() {
-                if(searchForm) {
-                    searchForm.classList.add('hidden');
-                }
+
+        //hide form after dinner roulette
+        function hideForm() {
+            if (searchForm) {
+                searchForm.classList.add('hidden');
             }
-            
-            hideForm();
-    
-        
+        }
+
+        hideForm();
+
+
     });
 
-    fetchFire();
+    //fetchfire api with error handling
+    fetchFire().catch(function (error) {
+        console.error('Error fetching data: ', error);
+    });
 
 });
 

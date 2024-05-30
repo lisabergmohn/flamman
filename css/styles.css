@@ -402,7 +402,7 @@ main {
     width: 85px;
 }*/
 
-.table-dinner td{
+.table-dinner td {
     font-family: trade-gothic-next, sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -427,13 +427,13 @@ main {
 input[type=text],
 input[type=date],
 select,
-textarea {
+textarea,
+.table-dinner {
     background-color: #f7f5ec;
     appearance: none;
     outline: none;
     cursor: pointer;
     width: 100%;
-    padding: 12px;
     border: 1px solid #2E231B;
     /* same as font color */
     box-sizing: border-box;
@@ -445,8 +445,12 @@ textarea {
     font-size: 1rem;
     color: #2E231B;
     /* font color */
+    padding-left: 12px;
     letter-spacing: .05rem;
     text-decoration: none;
+    height: 40px;
+    margin-bottom: 10px;
+
 }
 
 .search {
@@ -507,7 +511,7 @@ label {
 
 
 /* buttons */
-input[type=submit], input[type=date]
+input[type=submit],
 #bookBtn,
 .button-link {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -536,16 +540,18 @@ input[type=submit], input[type=date]
 
 /* responsive button small devices (phones) */
 @media (max-width: 425px) {
+
     /* buttons */
-input[type=submit],
-a#bookBtn,
-.button-link {
-    margin-top: 15px;
+    input[type=submit],
+    a#bookBtn,
+    .button-link {
+        margin-top: 15px;
     }
 }
 
 /* responsive button medium devices (tablets) */
 @media (min-width: 426px) and (max-width: 768px) {
+
     /* buttons */
     input[type=submit],
     a#bookBtn,
@@ -559,7 +565,8 @@ article {
 }
 
 input[type=submit]:hover,
-button:hover, .button-link:hover {
+button:hover,
+.button-link:hover {
     background: #F24F13;
 }
 
@@ -571,8 +578,7 @@ button:hover, .button-link:hover {
 /* styling the form for dinner booking */
 .table-dinner {
     width: 100%;
-    height: 41.5px;
-    background-color: #f7f5ec;
+    background-color: e7f0fe;
     padding: 12px;
     box-sizing: border-box;
     resize: vertical;
@@ -614,6 +620,7 @@ button:hover, .button-link:hover {
     font-weight: 300;
     font-size: 1rem;
     color: #2E231B;
+
     /* font color */
     letter-spacing: .05rem;
     text-decoration: none;
@@ -622,15 +629,23 @@ button:hover, .button-link:hover {
 
 /* responsive table for booking event small devices (phones) */
 @media (max-width: 425px) {
+
+    input[type="text"],
+    input[type="date"],
+    select,
     .table-dinner {
-        height: 41.5px;
+        width: 100%;
     }
 }
 
 /* responsive medium devices (tablets) */
 @media (min-width: 426px) and (max-width: 768px) {
+
+    input[type="text"],
+    input[type="date"],
+    select,
     .table-dinner {
-        height: 41.5px;
+        width: 100%;
     }
 }
 
@@ -726,13 +741,14 @@ aside {
     align-items: center;
     width: 200px;
     height: 200px;
+    padding-right: 40px;
 
 }
 
 /* newsletter name/email inputfield */
 #newsletter-name,
 #newsletter-mail {
-    width: 600px;
+    width: 100%;
     font-family: trade-gothic-next, sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -756,8 +772,11 @@ aside {
         width: 200px;
     }
 
-    #newsletter-img {
+    .newsletter-right {
         display: none;
+        visibility: hidden;
+        width: 0;
+        height: 0;
     }
 
     /* newsletter name/email inputfield */
@@ -780,6 +799,9 @@ aside {
 
     #newsletter-img {
         display: none;
+        visibility: hidden;
+        width: 0;
+        height: 0;
     }
 
     /* newsletter name/email inputfield */
