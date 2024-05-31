@@ -13,7 +13,6 @@ export async function fetchFire() {
 
         const data = await response.json();
         const startUrl = data.start_url;
-        console.log(startUrl);
         getFire(startUrl);
 
     } catch (error) {
@@ -25,12 +24,9 @@ export async function fetchFire() {
 
 /* get data from grillplatser.nu */
 function getFire(startUrl) {
-    console.log(startUrl);
     const anchor = document.createElement('a');
-
     anchor.href = startUrl + '/Grillplats/Visa/';
-    console.log(anchor);
-
+  
     getMap(anchor);
 
 }
@@ -38,7 +34,7 @@ function getFire(startUrl) {
 
 /* using leaflet library for map and popups */
 function getMap(anchor) {
-    console.log(anchor);
+   
     /* ((Coordinates targeting Gothenburg z, x), zoom level y) */
     let map = L.map('map').setView([57.708870, 11.974560], 10);
 

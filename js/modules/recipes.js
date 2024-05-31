@@ -1,5 +1,4 @@
 //fetching api from the meal db
-
 export async function fetchApi(searchValue) {
     const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`;
 
@@ -30,7 +29,6 @@ function getValue(result) {
 
 
     const mealValues = result.meals;
-    console.log(mealValues);
 
     //get a random recipe
     const randomIndex = Math.floor(Math.random() * mealValues.length);
@@ -80,7 +78,6 @@ function writeOutMeals(foodData) {
     //nedan hur den såg ut initialt
     //<td><img src="${foodData.mealImg}" alt="${foodData.strMeal}"></td>//
 
-    console.log(dataRecipes);
     document.getElementById('table-data').appendChild(dataRecipes);
     document.getElementById('table-meat').appendChild(formRecipe);
 

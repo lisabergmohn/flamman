@@ -52,7 +52,7 @@ h1 a {
     font-size: 8rem;
     letter-spacing: .8rem;
     text-decoration: none;
-    color: #2E231B;
+    color: #2E231B; /* font color */
 }
 
 h2,
@@ -81,8 +81,7 @@ h5 {
     font-style: normal;
     font-weight: 300;
     font-size: 1rem;
-    color: #2E231B;
-    /* font color */
+    color: #2E231B; /* font color */
     text-transform: uppercase;
     letter-spacing: .05rem;
 }
@@ -93,7 +92,7 @@ p {
     font-weight: 300;
     font-size: 1rem;
     line-height: 140%;
-    color: #2E231B;
+    color: #2E231B; /* font color */
     margin-top: 15px;
     margin-bottom: 25px;
 }
@@ -275,6 +274,7 @@ nav .nav-img {
         width: 100px;
     }
 
+    /* hide image when nav links are resoinsive */
     nav .nav-img.active {
         display: none;
     }
@@ -304,7 +304,7 @@ nav .nav-img {
     nav .nav-img {
         width: 100px;
     }
-
+     /* hide image when nav links are resoinsive */
     nav .nav-img.active {
         display: none;
     }
@@ -336,6 +336,7 @@ nav .nav-img {
         width: 100px;
     }
 
+     /* hide image when nav links are resoinsive */
     nav .nav-img.active {
         display: none;
     }
@@ -386,7 +387,6 @@ main {
     font-weight: 500;
     font-size: 1rem;
     color: #2E231B;
-    /* font color */
     text-transform: uppercase;
     letter-spacing: .05rem;
     text-decoration: none;
@@ -412,7 +412,7 @@ main {
     font-weight: 300;
     font-size: 1rem;
     color: #2E231B;
-    line-height: normal;    
+    line-height: normal;
     text-decoration: none;
     cursor: pointer;
     padding: 12px;
@@ -439,8 +439,7 @@ textarea,
     outline: none;
     cursor: pointer;
     width: 100%;
-    border: 1px solid #2E231B;
-    /* same as font color */
+    border: 1px solid #2E231B;/* same as font color */   
     box-sizing: border-box;
     resize: vertical;
     border-radius: 4px;
@@ -448,8 +447,7 @@ textarea,
     font-style: normal;
     font-weight: 300;
     font-size: 1rem;
-    color: #2E231B;
-    /* font color */
+    color: #2E231B; 
     padding-left: 12px;
     letter-spacing: .05rem;
     text-decoration: none;
@@ -508,7 +506,6 @@ label {
     font-weight: 300;
     font-size: 1rem;
     color: #2E231B;
-    /* font color */
     text-transform: uppercase;
     letter-spacing: .05rem;
 }
@@ -579,38 +576,12 @@ button:hover,
     width: 50%;
 }
 
-/* hover text over table-dinner from */
-.table-dinner::before {
-    content: 'Hey, you have already scored a recipe! Go on and pick a fireplace.';
-    position: absolute;
-    bottom: 100%;
-    left: 20%;
-    background-color: #e9f0ec;
-    height: 50px;
-    width: 200px;
-    opacity: 0;
-    transition: 0.3s;
-    padding: 15px;
-    border-radius: 4px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: normal;
-}
-
-.table-dinner:hover::before {
-    opacity: 1;
-}
-
 #table-meat td a {
     font-family: trade-gothic-next, sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 1rem;
     color: #2E231B;
-
-    /* font color */
     letter-spacing: .05rem;
     text-decoration: none;
     cursor: pointer;
@@ -637,7 +608,6 @@ button:hover,
         width: 100%;
     }
 }
-
 
 
 /* aside */

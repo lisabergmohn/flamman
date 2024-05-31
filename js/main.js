@@ -3,7 +3,6 @@ import { fetchFire } from './modules/fires.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 
-
     const btn = document.getElementById('submit-recipes');
     const searchForm = document.querySelector('.search');
     const searchField = document.getElementById('search-field');
@@ -15,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const searchValue = searchField.value.trim();
 
-        //to remove the searchform from when there is a result
+        //to remove the searchform when there is no result 
+        //and user want to search once more
         searchForm.classList.remove('visible');
 
         //check each search: more than 1 in length OR includes the 
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Error fetching data: ', error);
                 alert('Error when playing dinner roulett.');
             });
-
         } else {
             alert('First, let the dinner roulette pick your food!');
             searchForm.classList.add('visible');
